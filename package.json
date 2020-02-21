@@ -9,6 +9,7 @@
   "author": "Ali Rasapour",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.17.1",
     "figlet": "^1.2.4",
     "kavenegar": "^1.1.4"
   }
