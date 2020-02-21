@@ -11,9 +11,9 @@ exec("jcal", (error, stdout, stderr) => {
         console.log(`stderr: ${stderr}`);
         return;
     }
-    console.log(`stdout: ${stdout}`);
+    console.log(`${stdout}`);
 });
-figlet("Docker  Container", function(err, data) {
+figlet("\nDocker  Container", function(err, data) {
   if (err) {
     console.log("Something went wrong...");
     console.dir(err);
@@ -32,4 +32,4 @@ const port = 8080
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`\n\nExample app listening on port ${port}! \n\n`))
