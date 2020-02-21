@@ -1,6 +1,23 @@
-FROM ubuntu:v6
+#Created By : Ali Rasapour - 2020
+#Base Image
+FROM ubuntu:latest
 
 
-EXPOSE 3000
+#Install Dependency and Upgrade Ubuntu
+RUN apt-get update -y
+RUN apt-get install nodejs -y
+RUN apt-get install git-core curl build-essential openssl libssl-dev -y
+RUN curl -L https://npmjs.org/install.sh | sh
+RUN apt-get install git -y
+RUN apt-get clean
 
-CMD [ "node", "docker-files/server.js" ]
+
+#Clone Github and build Project
+RUN  git clone https://github.com/alirasapour/files.git
+WORKDIR /files/
+RUN npm i
+
+
+#Port Configuration and Start Project
+EXPOSE 8080
+CMD [ "node", "server.js" ]
