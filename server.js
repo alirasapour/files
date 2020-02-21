@@ -1,7 +1,18 @@
 'use strict';
 var figlet = require("figlet");
+const { exec } = require("child_process");
 
-
+exec("jcal", (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+    }
+    console.log(`stdout: ${stdout}`);
+});
 figlet("Docker  Container", function(err, data) {
   if (err) {
     console.log("Something went wrong...");
@@ -17,7 +28,7 @@ figlet("Docker  Container", function(err, data) {
 
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 8080
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
