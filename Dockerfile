@@ -4,6 +4,7 @@ FROM alpine:latest
 
 #Install Dependency and Upgrade Ubuntu
 RUN apk add git
+RUN apk add htop
 
 
 #Clone Github and build Project
