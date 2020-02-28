@@ -18,4 +18,3 @@ RUN npm i
 #Port Configuration and Start Project
 EXPOSE 8080
 CMD [ "node", "server.js" ]
-CMD [ "htop" ]
